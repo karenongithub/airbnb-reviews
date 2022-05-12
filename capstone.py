@@ -1,8 +1,9 @@
 import pickle
 import streamlit as st
+from PIL import Image
 
 #add title
-st.title('Review Content Analyzer')
+st.title('Airbnb Review Content Analyzer')
 
 #read in pipe from pickle
 with open('saved_models/location_pipe.pkl', 'rb') as pickle_in:
@@ -13,13 +14,16 @@ with open('saved_models/comfort_pipe.pkl', 'rb') as pickle_in:
 
 with open('saved_models/cost_pipe.pkl', 'rb') as pickle_in:
     cost_pipe = pickle.load(pickle_in)
-    
+
 with open('saved_models/hygeine_pipe.pkl', 'rb') as pickle_in:
     hyg_pipe = pickle.load(pickle_in)
 
 with open('saved_models/host_pipe.pkl', 'rb') as pickle_in:
     host_pipe = pickle.load(pickle_in)
 
+#insert image
+img = Image.open('images/airbnblogo.png')
+st.image(img)
 
 #code for user to enter text
 your_text = st.text_area('Enter your text here', height=200, max_chars=500)
@@ -41,12 +45,11 @@ if comf_pred == 1:
 if cost_pred == 1:
     results_list.append('Cost')
 if hyg_pred == 1:
-    results_list.append('Hygeine')
+    results_list.append('Hygiene')
 if host_pred == 1:
     results_list.append('Host')
-else:
+if len(results_list) == 0:
     results_list.append('No results')
-
 
 #generated predictions
 st.write(f'This review mentions {results_list}')
