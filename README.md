@@ -61,8 +61,8 @@ To train the model better, undersampling, oversampling, and weighted classes wer
 |Comfort|58%|99%|93%|Train: 99%, Test: 96%|
 |Cost|85%|99%|92%|Train: 99%, Test: 99%|
 
-## Streamlit
-The model can be accessed by running the [Streamlit Model](https://github.com/karenongithub/airbnb-reviews/blob/main/streamlit_model.py). Using streamlit, any Airbnb review from New York City or other major American city can be inputted into the streamlit, and the review contents can be synthesized.
+## Final Model
+The final model can be accessed by running the model on [Streamlit](https://github.com/karenongithub/airbnb-reviews/blob/main/streamlit_model.py). Using Streamlit, any Airbnb review from New York City or other major American city can be inputted into the Streamlit, and the review contents can be synthesized.
 
 ## Further Analysis
 1. **Additional bigram and unigram analysis, and part-of-speech tagging to further differentiate within themes:** Using the location of adjectives, adverbs, or bigrams of specific phrases, the model can be further applied to see what about each themes might contribute to high or low ratings (i.e. for location, if a review mentions it is far or close, does that contribute to how a consumer might rate the Airbnb?)
