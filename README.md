@@ -31,16 +31,16 @@ Of the 890,000 reviews, the final clean dataset contained around 600,000 reviews
 Using the cleaned dataset, a CountVectorizer was used to analyze recurring themes among the 600,000 reviews. The text was analyzed using unigrams and bigrams, and analyzed by listing reviews to see if more themes or words were common if a listing had 0 out of 5 stars, 1 out of 5 stars, etc.
 
 Based on this analysis, the following Airbnb themes appeared, and were assigned as targets for modeling:
-- **Location** (walking distance, subway, close subway, great location, minute walk, times square, central park, blocks away, location close, metro station, neighborhood, nearby, close)
-- **Host** (great host, quick respond, communication, host, responsive, accommodating, welcoming, welcoming)
-- **Hygiene** (place clean, apartment clean, clean comfortable, room clean, super clean, clean)
-- **Comfort** (bed comfortable, comfortable, like home, nice place, place nice, spacious, safe)
-- **Cost** (great value, value)
+- **Location** (example bigrams and unigrams: walking distance, subway, close subway, great location, minute walk, times square, central park, blocks away, location close, metro station, neighborhood, nearby, close)
+- **Host** (example bigrams and unigrams: great host, quick respond, communication, host, responsive, accommodating, welcoming, welcoming)
+- **Hygiene** (example bigrams and unigrams: place clean, apartment clean, clean comfortable, room clean, super clean, clean)
+- **Comfort** (example bigrams and unigrams: bed comfortable, comfortable, like home, nice place, place nice, spacious, safe)
+- **Cost** (example bigrams and unigrams: great value, value)
 
 ## Imbalanced Classes
 Of the themes extracted, most were relative balanced with the exception of Location, Host, and Cost. Cost had the most imbalanced class with only 10% of reviews mentioning costs or price.
 
-To train the model better, undersampling, oversampling, and weighted classes were applied
+To train the model better, undersampling, oversampling, and weighted classes were applied to the model to boost performance.
 
 ## Model Measurements
 Since the purpose of the model is to extract themes, **accuracy**, **recall**, and the model's ability to generalize to new data were the primary outcome measurements.
@@ -65,5 +65,5 @@ To train the model better, undersampling, oversampling, and weighted classes wer
 The model can be accessed by running the [Streamlit Model](https://github.com/karenongithub/airbnb-reviews/blob/main/streamlit_model.py). Using streamlit, any Airbnb review from New York City or other major American city can be inputted into the streamlit, and the review contents can be synthesized.
 
 ## Further Analysis
-1. Additional bigram and unigram analysis, and part-of-speech tagging to further differentiate within themes: Using the location of adjectives, adverbs, or bigrams of specific phrases, the model can be further applied to see what about each themes might contribute to high or low ratings (i.e. for location, if a review mentions it is far or close, does that contribute to how a consumer might rate the Airbnb?)
-2. Explore if reviews impact on a listing's overall score: During the exploratory data analysis, it was discovered negative reviews did not directly correspond to the listing's overall score. For example, if there were multiple reviews mentioning a "dirty" listing, a listing was still likely to have an overall rating of 4-5 stars. To further improve the model, more detailed analysis can be done and pulled into the model.
+1. **Additional bigram and unigram analysis, and part-of-speech tagging to further differentiate within themes:** Using the location of adjectives, adverbs, or bigrams of specific phrases, the model can be further applied to see what about each themes might contribute to high or low ratings (i.e. for location, if a review mentions it is far or close, does that contribute to how a consumer might rate the Airbnb?)
+2. **Explore if reviews impact on a listing's overall score:** During the exploratory data analysis, it was discovered negative reviews did not directly correspond to the listing's overall score. For example, if there were multiple reviews mentioning a "dirty" listing, a listing was still likely to have an overall rating of 4-5 stars. To further improve the model, more detailed analysis can be done and pulled into the model.
