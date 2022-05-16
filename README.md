@@ -1,4 +1,6 @@
-#Airbnb Review Analysis Classifier
+# Airbnb Review Analysis Classifier
+
+![Image from bizrate insights](images/reviews.jpeg)
 
 ## Summary
 More business rely on recommendation and consumer reviews such as Yelp, TripAdvisor, Google Reviews, and Zocdoc. How can companies understand what items are important to the customers using their products, or by product review? For customers who give high or low ratings, what factors contribute to their final rating?
@@ -6,9 +8,7 @@ More business rely on recommendation and consumer reviews such as Yelp, TripAdvi
 Using classification algorithms, data can be analyzed to break down reviews into their thematic components, and applied to future reviews to analyze why a consumer might rate an item or listing the way they do.
 
 ## Download Requirements
-Due to hardware limitations, the code for this project was run using [Google Colab](https://colab.research.google.com/).
-
-The datasets used for the project were large, and are currently stored on a shared cloud file: [kchien_data](https://drive.google.com/drive/folders/1aVfT2q2oqjpRhgpyDVdP1l314-UM7Ljl?usp=sharing).
+Due to hardware limitations, the code for this project was run using [Google Colab](https://colab.research.google.com/). The datasets used for the project were large, and are currently stored on a shared cloud file: [kchien_data](https://drive.google.com/drive/folders/1aVfT2q2oqjpRhgpyDVdP1l314-UM7Ljl?usp=sharing).
 
 The run the code, the shared file needs to be downloaded and saved into a Google MyDrive for access.
 
@@ -19,7 +19,10 @@ Ratings and reviews are extremely helpful data points for potential customers, a
 
 Around 890,000 reviews for Airbnb listings in New York City, and their corresponding ratings were collected for analysis and model training.
 
-## Data Cleaning
+## Preprocessing
+
+![example data](images/data.png)
+
 langdetect library was used to identify each review's language. Non-English reviews were dropped from the dataset. Further analysis within non-English reviews showed that langdetect miscategorized reviews 15 words or less as non-English. For the remaining dataset in English, reviews that were 15 words or less were dropped.
 
 Of the 890,000 reviews, the final clean dataset contained around 600,000 reviews for analysis and training.
@@ -32,7 +35,7 @@ Based on this analysis, the following Airbnb themes appeared, and were assigned 
 - **Host** (great host, quick respond, communication, host, responsive, accommodating, welcoming, welcoming)
 - **Hygiene** (place clean, apartment clean, clean comfortable, room clean, super clean, clean)
 - **Comfort** (bed comfortable, comfortable, like home, nice place, place nice, spacious, safe)
--**Cost** (great value, value)
+- **Cost** (great value, value)
 
 ## Imbalanced Classes
 Of the themes extracted, most were relative balanced with the exception of Location, Host, and Cost. Cost had the most imbalanced class with only 10% of reviews mentioning costs or price.
