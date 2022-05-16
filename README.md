@@ -1,4 +1,4 @@
-# Airbnb Review Analysis Classifier
+# Airbnb Review Classifier
 
 ![Image from bizrate insights](images/reviews.jpeg)
 
